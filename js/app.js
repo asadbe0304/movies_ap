@@ -21,8 +21,6 @@ $(".drop").addEventListener("click", () => {
     console.log(elArrow);
 })
 
-
-
 movies.splice(50);
 
 // ============= NORMLIZE MOVIES ==========////
@@ -52,9 +50,9 @@ allMovies.forEach((e) => {
     clone.querySelector('.card-title').textContent = e.title;
     clone.querySelector('.card-text').textContent = "Description: " + e.summary
     clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
-    clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating 
-    clone.querySelector('.cate').textContent = 'Category: ' + e.category 
-    clone.querySelector('.time').textContent =  e.time 
+    clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
+    clone.querySelector('.cate').textContent = 'Category: ' + e.category
+    clone.querySelector('.time').textContent = e.time
     $('.hero__right').appendChild(clone)
 })
 
