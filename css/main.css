@@ -404,9 +404,23 @@ img {
 .header__logo {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-decoration: none;
   font-size: 32px;
   line-height: 28px;
+}
+
+.header__logo--img {
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.logo {
+  margin: 0 4px 3px;
+  padding: 0;
 }
 
 .header__list {
