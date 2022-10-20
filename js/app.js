@@ -40,12 +40,27 @@ const allMovies = movies.map((e) => {
         largeImg: e.bigThumbnail,
     };
 });
+let year= []; 
+let rate= [] ;
+let category= [] ;
 
-console.log(allMovies);
+// console.log(allMovies);
 
 
 allMovies.forEach((e) => {
-    const clone = $('#template').content.cloneNode(true);
+    if(!year.includes(e.year)){
+        year.push(e.year);
+    }
+    if(!rate.includes(e.rating)){
+        rate.push(e.rating);
+    }
+    if(!category.includes(e.category)){
+        category.push(e.category);
+    }
+
+    // category.push(e.category)
+console.log(year);
+    const clone = $('template').content.cloneNode(true);
     clone.querySelector('img').src = e.largeImg;
     clone.querySelector('.card-title').textContent = e.title;
     clone.querySelector('.card-text').textContent = "Description: " + e.summary
@@ -56,7 +71,21 @@ allMovies.forEach((e) => {
     $('.hero__right').appendChild(clone)
 })
 
-
+year.forEach((e)=>{
+    const option=document.createElement('option');
+    option.innerHTML=e;
+    $('.date').appendChild(option)
+})
+rate.forEach((e)=>{
+    const option=document.createElement('option');
+    option.innerHTML=e;
+    $('.rate').appendChild(option)
+})
+category.forEach((e)=>{
+    const option=document.createElement('option');
+    option.innerHTML=e;
+    $('.form-control').appendChild(option)
+})
 // ============= NORMLIZE MOVIES END ==========////
 // EXTRA PLUGINS//
 
