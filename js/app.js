@@ -40,26 +40,25 @@ const allMovies = movies.map((e) => {
         largeImg: e.bigThumbnail,
     };
 });
-let year= []; 
-let rate= [] ;
-let category= [] ;
+let year = [];
+let rate = [];
+
 
 // console.log(allMovies);
 
 
 allMovies.forEach((e) => {
-    if(!year.includes(e.year)){
+    if (!year.includes(e.year)) {
         year.push(e.year);
     }
-    if(!rate.includes(e.rating)){
+    if (!rate.includes(e.rating)) {
         rate.push(e.rating);
     }
-    if(!category.includes(e.category)){
-        category.push(e.category);
-    }
+
+    // console.log(category);
 
     // category.push(e.category)
-console.log(year);
+    console.log(year);
     const clone = $('template').content.cloneNode(true);
     clone.querySelector('img').src = e.largeImg;
     clone.querySelector('.card-title').textContent = e.title;
@@ -71,21 +70,56 @@ console.log(year);
     $('.hero__right').appendChild(clone)
 })
 
-year.forEach((e)=>{
-    const option=document.createElement('option');
-    option.innerHTML=e;
+year.sort()
+year.forEach((e) => {
+    const option = document.createElement('option');
+    option.innerHTML = e;
     $('.date').appendChild(option)
 })
-rate.forEach((e)=>{
-    const option=document.createElement('option');
-    option.innerHTML=e;
+
+rate.sort()
+rate.forEach((e) => {
+    const option = document.createElement('option');
+    option.innerHTML = e;
     $('.rate').appendChild(option)
 })
-category.forEach((e)=>{
-    const option=document.createElement('option');
-    option.innerHTML=e;
-    $('.form-control').appendChild(option)
+
+function dynamicCategory() {
+
+    let category = [];
+    allMovies.forEach((e) => {
+        e.category.forEach((e) => {
+            if (!category.includes(e)) {
+                category.push(e);
+            }
+        });
+    });
+    category.sort()
+    category.forEach((e) => {
+        const option = document.createElement('option');
+        option.innerHTML = e;
+        $('.form-control').appendChild(option)
+    })
+}
+
+dynamicCategory();
+
+
+const findFilm = (str) => {
+
+    return allMovies.filter((e) => {
+        return e.title.toloLowerCase() === str;
+
+    })
+}
+
+
+$('.film-name').addEventListener('keyup', () => {
+    const searchVal = $('film-name').value.toloLowerCase();
+
 })
+
+
 // ============= NORMLIZE MOVIES END ==========////
 // EXTRA PLUGINS//
 

@@ -418,9 +418,13 @@ img {
   vertical-align: middle;
 }
 
-.logo {
+.logo__youtube {
   margin: 0 4px 3px;
   padding: 0;
+  border-radius: 50%;
+  border: none;
+  -webkit-animation: logo 1s infinite;
+          animation: logo 1s infinite;
 }
 
 .header__list {
@@ -588,6 +592,40 @@ img {
     padding: 30px 16px 30px 35px;
     line-height: 32px;
     font-size: 20px;
+  }
+}
+@-webkit-keyframes logo {
+  0% {
+    box-shadow: 0 0 0 0 #926363;
+  }
+  25% {
+    box-shadow: 0 0 2px 2px #926363;
+  }
+  50% {
+    box-shadow: 0 0px 4px 4px #926363;
+  }
+  75% {
+    box-shadow: 0 0px 6px 6px #926363;
+  }
+  100% {
+    box-shadow: 0 0px 8px 10px #926363;
+  }
+}
+@keyframes logo {
+  0% {
+    box-shadow: 0 0 0 0 #926363;
+  }
+  25% {
+    box-shadow: 0 0 2px 2px #926363;
+  }
+  50% {
+    box-shadow: 0 0px 4px 4px #926363;
+  }
+  75% {
+    box-shadow: 0 0px 6px 6px #926363;
+  }
+  100% {
+    box-shadow: 0 0px 8px 10px #926363;
   }
 }
 .hero {
