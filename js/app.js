@@ -168,7 +168,18 @@ function renderSearchResult(data = []) {
 
 
 
+/// dark mode rejimi============
+const elDarkBtn=$('.dark__img');
+const elBody =$('body');
+// console.log(elBody);
+// console.log(elDarkBtn);
 
+elDarkBtn.addEventListener('click', (e)=>{
+    elBody.classList.toggle('dark')
+    elDarkBtn.classList.toggle('img_root')
+    // elDarkBtn.setAttribute.add( 'style','transform:rotateX(180deg')
+    // elDarkBtn.setAttribute.remove( 'style','transform:rotateX(180deg')
+})
 
 // ============= NORMLIZE MOVIES END ==========////
 // EXTRA PLUGINS//

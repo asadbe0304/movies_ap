@@ -18,7 +18,7 @@
     <header class="site-header" id="header">
         <div class="container">
             <div class="header-inner  header">
-                <a class="header__logo text-uppercase text-danger fw-bold" href="./">
+                <a class="header__logo text-uppercase  fw-bold" href="./">
                     M<span class="header__logo--span"><img class="logo__youtube" src="./images/youtub.png" width="32px"
                             height="32px" alt=" youtube logo"></span>vies
                 </a>
@@ -61,7 +61,9 @@
                         </a>
                     </li>
                 </ul>
-
+                <div class="dark_mod">
+                    <img class="dark__img" src="./images/moon.png" width="32" height="32" alt="moon icon color yellow">
+                </div>
                 <div class="hamburger btn">
                     <span class="line bg-danger line1"></span>
                     <span class="line bg-danger line2"></span>
@@ -77,8 +79,8 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero__form">
-                        <form action="#" class="mx-2 bg-white form rounded-3 p-3 shadow">
-                            <label for="exampleDataList" class=" fw-bold my-3 col-12">Category
+                        <form action="#" class="mx-2 form rounded-3 p-3 shadow">
+                            <label for="exampleDataList" class=" fw-bold label my-3 col-12">Category
                                 <select class="col-12 form-control category py-2 col-12 rounded-3 my-4">
                                     <option value="all" disabled selected>All</option>
                                 </select>
@@ -90,7 +92,7 @@
                                 Search
                                 <input type="search" class="py-2 col-12 rounded-3 my-4">
                             </label>-->
-                            <label class="fw-bold col-12">
+                            <label class="fw-bold label col-12">
                                 Search Name
                                 <input id="film-name" type="text" class="py-2 col-12 rounded-3 my-4">
                             </label>
@@ -99,14 +101,14 @@
                                 <input placeholder="Dates" class="date col-12 py-2 date col-12 rounded-3 my-4">
                                 </input>
                             </label> -->
-                            <label class="fw-bold  col-12 ">
+                            <label class="fw-bold  label col-12 ">
                                 Rating
                                 <input type="number" min="1" max="10" value="1" placeholder="Rating "
                                     class="rate col-12 py-2 date col-12 rounded-3 my-4">
                                 </input>
                             </label>
 
-                            <button class="btn col-12 btn-search btn-dark rounded-3">
+                            <button class="btn col-12 btn-search rounded-3">
                                 Submit
                             </button>
                         </form>
@@ -213,7 +215,7 @@
                     <img class="star" src="./images/ic.png" alt="">
                     <img class="star" src="./images/ic.png" alt="">
                 </div>
-                <a href="#" class="btn blink p-0 text-dark fw-bold">Go Watch Full</a>
+                <a href="#" class="btn blink p-0 fw-bold">Go Watch Full</a>
                 <a href="#" class="btn btn-dark">Watch</a>
             </div>
         </div>
@@ -222,10 +224,8 @@
 
     <!-- FRAME TEMPLATE  -->
 
-    <div class="container">
-        <div class="row">
-
-        </div>
+    <div class="scroll__top">
+        <a href="#" class="fw-bold text-white"> Top </a>
     </div>
 
     <script src="./js/db.js"></script>

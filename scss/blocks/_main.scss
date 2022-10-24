@@ -14,6 +14,7 @@
 // }
 .card {
     width: 350px;
+    background: var(--clr--card-bg-color);
 }
 
 .card-img-top {
@@ -26,19 +27,25 @@
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--clr--card--text-color);
 }
 
 .card-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--clr--card--text-color);
 }
 
 .cate {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--clr--card--text-color);
 }
+// .date{
+//     color: var(--clr--card--text-color);
+// }
 
 .hero__form {
     width: 350px;
@@ -51,8 +58,13 @@
 
 .form {
     width: 350px;
+    background: var(--clr--card-bg-color);
 }
 
+.btn-search{
+    background-color: var( --clr--card--btn-color);
+    color: var(--clr--header--list-color);
+}
 .hero__right {
     margin: 0 auto;
     padding: 0;
@@ -62,9 +74,12 @@
 }
 
 .blink {
-    color: #fff !important;
+    color: var(--clr--header--list-color) !important;
 }
 
+.label{
+    color: var(--clr--card--text-color);
+}
 
 // lodaerrr spinner
 

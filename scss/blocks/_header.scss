@@ -1,7 +1,27 @@
+
+// dark mode style =============
+.dark_mod{
+    margin: 0;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background:  var(--clr--card-bg-color);
+    border-radius: 50%;
+}
+
+.dark__img{
+    cursor:pointer;
+    transition: all .5s ease;
+}
+
+.img_root{
+    transform: rotateX(180deg);
+}
 .site-header {
     margin: 0;
     padding: 0;
-    background: #222933;
+    background: var(--clr--header--bg-color);
 }
 
 .header {
@@ -19,16 +39,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--clr--header--logo-color);
     text-decoration: none;
     font-size: 32px;
     line-height: 28px;
 }
-.header__logo--img{
+
+.header__logo--img {
     margin: 0;
     padding: 0;
     vertical-align: middle;
 }
-.logo__youtube{
+
+.logo__youtube {
     margin: 0 4px 3px;
     padding: 0;
     // box-shadow: 0px 2px 8px 8px #555;
@@ -37,6 +60,7 @@
     animation: logo 1s infinite;
     // transition: animation 1s ease-in-out;
 }
+
 .header__list {
     margin: 0;
     padding: 0;
@@ -55,7 +79,7 @@
     font-weight: 500;
     line-height: 32px;
     font-size: 18px;
-    color: #e5e5e5;
+    color: var(--clr--header--list-color);
     text-decoration: none;
     transition: all .3s ease-in;
 }
@@ -143,7 +167,7 @@
     border-top-left-radius: 30px;
     // border-bottom-left-radius:10px;
     border-bottom-right-radius: 30px;
-    box-shadow: 4px 4px 6px 1px;    
+    box-shadow: 4px 4px 6px 1px;
 }
 
 .inner__item .inner__item--link {
@@ -167,6 +191,7 @@
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
+
 // @media screen and(max-width:1320px) {
 //     .header__list--item .list__item--link{
 //         width: 25%;
@@ -226,20 +251,24 @@
 }
 
 
-@keyframes logo{
-    0%{
+@keyframes logo {
+    0% {
         box-shadow: 0 0 0 0 #926363;
     }
-    25%{
+
+    25% {
         box-shadow: 0 0 2px 2px #926363;
     }
-    50%{
+
+    50% {
         box-shadow: 0 0px 4px 4px #926363;
     }
-    75%{
+
+    75% {
         box-shadow: 0 0px 6px 6px #926363;
     }
-    100%{
+
+    100% {
         box-shadow: 0 0px 8px 10px #926363;
     }
 }

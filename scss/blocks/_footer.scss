@@ -1,12 +1,12 @@
 .site-footer {
     margin: 40px 0 0 0;
     padding: 0;
-    background: #222933;
+    background: var(--clr--header--bg-color);
 }
 
 .footer {
     margin: 0;
-    padding: 20px 0;
+    padding: 0px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
