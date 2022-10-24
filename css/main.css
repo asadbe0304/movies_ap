@@ -470,7 +470,7 @@ img {
   padding: 0px 20px;
   width: 100%;
   left: 0;
-  z-index: 6555;
+  z-index: 55;
   opacity: 0.9;
   background: var(--clr--stick--bg-color);
   box-shadow: 0 4px 30px var(--clr--header--shadow-color);
