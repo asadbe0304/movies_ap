@@ -21,7 +21,7 @@ $(".drop").addEventListener("click", () => {
     console.log(elArrow);
 })
 
-movies.splice(10);
+movies.splice(100);
 
 // ============= NORMLIZE MOVIES ==========////
 
