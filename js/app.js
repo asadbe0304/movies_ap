@@ -21,7 +21,7 @@ $(".drop").addEventListener("click", () => {
     console.log(elArrow);
 })
 
-movies.splice(50);
+movies.splice(10);
 
 // ============= NORMLIZE MOVIES ==========////
 
@@ -131,9 +131,9 @@ $('.btn-search').addEventListener('click', () => {
     // console.log(searchVal);
 
     setTimeout(() => {
-        $('.hero__right').innerHTML =""
+        $('.hero__right').innerHTML = ""
         renderSearchResult(searchresult);
-        $('.result').innerHTML=`<h2 class="text-danger fw-bold">${searchresult.length} information found</h2>`
+        $('.result').innerHTML = `<h2 class="text-danger fw-bold">${searchresult.length} information found</h2>`
     }, 2000);
 
 })
