@@ -67,6 +67,7 @@ allMovies.forEach((e) => {
     clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
     clone.querySelector('.cate').textContent = 'Category: ' + e.category
     clone.querySelector('.time').textContent = e.time
+    clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
     $('.hero__right').appendChild(clone)
 })
 
@@ -105,19 +106,68 @@ function dynamicCategory() {
 dynamicCategory();
 
 
-const findFilm = (str) => {
+const findFilm = (str, rat, ctg) => {
 
     return allMovies.filter((e) => {
-        return e.title.toloLowerCase() === str;
+        return e.title.match(str) && e.rating >= rat && e.category.includes(ctg);
 
     })
 }
 
 
-$('.film-name').addEventListener('keyup', () => {
-    const searchVal = $('film-name').value.toloLowerCase();
+$('.btn-search').addEventListener('click', () => {
+    $('.hero__right').innerHTML = ` <div class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>`
+    const searchVal = $('#film-name').value.toLowerCase().trim();
+    const rating = $('.rate').value;
+    const catg = $('.category').value;
+    const searchText = new RegExp(searchVal, 'gi');
+    const searchresult = findFilm(searchText, rating, catg);
+    console.log(searchresult);
+    // console.log(searchVal);
+
+    setTimeout(() => {
+        $('.hero__right').innerHTML =""
+        renderSearchResult(searchresult);
+        $('.result').innerHTML=`<h2 class="text-danger fw-bold">${searchresult.length} information found</h2>`
+    }, 2000);
 
 })
+//  find film end//
+
+function renderSearchResult(data = []) {
+    data.forEach((e) => {
+        if (!year.includes(e.year)) {
+            year.push(e.year);
+        }
+        if (!rate.includes(e.rating)) {
+            rate.push(e.rating);
+        }
+
+        // console.log(category);
+
+        // category.push(e.category)
+        console.log(year);
+        const clone = $('template').content.cloneNode(true);
+        clone.querySelector('img').src = e.smallImg;
+        clone.querySelector('.card-title').textContent = e.title;
+        clone.querySelector('.card-text').textContent = "Description: " + e.summary
+        clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
+        clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
+        clone.querySelector('.cate').textContent = 'Category: ' + e.category
+        clone.querySelector('.time').textContent = e.time
+        clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
+        $('.hero__right').appendChild(clone)
+    })
+
+}
+
+
+
 
 
 // ============= NORMLIZE MOVIES END ==========////

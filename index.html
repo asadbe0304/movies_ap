@@ -19,7 +19,7 @@
             <div class="header-inner  header">
                 <a class="header__logo text-uppercase text-danger fw-bold" href="./">
                     M<span class="header__logo--span"><img class="logo__youtube" src="./images/youtub.png" width="32px"
-                            height="32px" alt=" youtube logo"></span>vies 
+                            height="32px" alt=" youtube logo"></span>vies
                 </a>
                 <ul class="header__list  justify-content-between">
                     <li class="header__list--item">
@@ -76,10 +76,9 @@
             <div class="container">
                 <div class="hero">
                     <div class="hero__form">
-                        <form action="#"
-                            class="mx-2 bg-white form rounded-3 p-3 shadow">
+                        <form action="#" class="mx-2 bg-white form rounded-3 p-3 shadow">
                             <label for="exampleDataList" class=" fw-bold my-3 col-12">Category
-                                <select class="col-12 form-control py-2 col-12 rounded-3 my-4">
+                                <select class="col-12 form-control category py-2 col-12 rounded-3 my-4">
                                     <option value="all" disabled selected>All</option>
                                 </select>
                             </label>
@@ -90,29 +89,32 @@
                                 Search
                                 <input type="search" class="py-2 col-12 rounded-3 my-4">
                             </label>-->
-                            <label class="fw-bold film-name col-12">
-                                Sort Name
-                                <input type="text" class="py-2 col-12 rounded-3 my-4">
+                            <label class="fw-bold col-12">
+                                Search Name
+                                <input id="film-name" type="text" class="py-2 col-12 rounded-3 my-4">
                             </label>
-                            <label class="fw-bold  col-12 ">
+                            <!-- <label class="fw-bold  col-12 ">
                                 Dates
-                                <select class="date col-12 py-2 date col-12 rounded-3 my-4">
-                                    <option value="all" disabled selected>All</option>
-                                </select>
-                            </label>
+                                <input placeholder="Dates" class="date col-12 py-2 date col-12 rounded-3 my-4">
+                                </input>
+                            </label> -->
                             <label class="fw-bold  col-12 ">
                                 Rating
-                                <select class="rate col-12 py-2 date col-12 rounded-3 my-4">
-                                    <option value="all" disabled selected>All</option>
-                                </select>
+                                <input type="number" min="1" max="10" value="1" placeholder="Rating "
+                                    class="rate col-12 py-2 date col-12 rounded-3 my-4">
+                                </input>
                             </label>
 
-                            <button class="btn col-12 btn-dark rounded-3">
+                            <button class="btn col-12 btn-search btn-dark rounded-3">
                                 Submit
                             </button>
                         </form>
+                        <div class="result bg-light .container mx-auto card p-3 text-center w-100 text-success shadow ">
+
+                        </div>
                     </div>
                     <div class="hero__right d-flex flex-wrap gap-3 ">
+                       
                     </div>
                 </div>
             </div>
@@ -178,11 +180,20 @@
                     <img class="star" src="./images/ic.png" alt="">
                     <img class="star" src="./images/ic.png" alt="">
                 </div>
-                <a href="#" class="btn blink btn-dark">Go Watch Full</a>
+                <a href="#" class="btn blink p-0 text-dark fw-bold">Go Watch Full</a>
+                <a href="#" class="btn btn-dark">Watch</a>
             </div>
         </div>
     </template>
     <!-- TEMPLATE -->
+
+    <!-- FRAME TEMPLATE  -->
+
+    <div class="container">
+        <div class="row">
+
+        </div>
+    </div>
 
     <script src="./js/db.js"></script>
     <script src="./js/plugin.js"></script>
