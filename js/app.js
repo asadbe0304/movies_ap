@@ -60,7 +60,7 @@ allMovies.forEach((e) => {
     // category.push(e.category)
     console.log(year);
     const clone = $('template').content.cloneNode(true);
-    clone.querySelector('img').src = e.largeImg;
+    clone.querySelector('img').src = e.smallImg;
     clone.querySelector('.card-title').textContent = e.title;
     clone.querySelector('.card-text').textContent = "Description: " + e.summary
     clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
