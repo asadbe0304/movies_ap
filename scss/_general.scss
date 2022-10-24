@@ -1,5 +1,7 @@
 :root {
-    --clr--header--bg-color: #222933;
+    --clr--header--bg-color: #222932;
+    --clr--header--stick-color: #222932dc;
+    --clr--header--shadow-color: #0000001a;
     --clr--header--logo-color: #c40d0d;
     --clr--header--list-color: #e5e5e5;
     --clr--body--bg-color: #131A20;
@@ -10,6 +12,7 @@
 
 .dark {
     --clr--header--bg-color: #e6e6e6;
+    --clr--header--stick-color: #e6e6e696;
     --clr--header--logo-color: #166fb8;
     --clr--header--list-color: #070707;
     --clr--body--bg-color: #919fac;
