@@ -349,7 +349,7 @@ template {
   --clr--header--stick-color: #222932dc;
   --clr--header--shadow-color: #0000001a;
   --clr--header--logo-color: #c40d0d;
-  --clr--header--list-color: #e5e5e5;
+  --clr--header--list-color: #0f9fe2;
   --clr--body--bg-color: #131A20;
   --clr--card-bg-color: #fff;
   --clr--card--btn-color: #1d1d1d;
@@ -365,6 +365,26 @@ template {
   --clr--card-bg-color: #252525;
   --clr--card--btn-color: #8f8f8f;
   --clr--card--text-color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #10eccf;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 5px 5px 9px #606060, -5px -5px 9px #ffffff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
 }
 
 * {
@@ -522,7 +542,7 @@ img {
   display: block;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 32px;
   font-size: 15px;
   color: var(--clr--header--list-color);
@@ -787,6 +807,10 @@ img {
   align-items: center;
 }
 
+.result {
+  width: 350px;
+}
+
 .blink {
   color: var(--clr--header--list-color) !important;
 }
@@ -886,7 +910,7 @@ img {
     width: 100%;
   }
   .form {
-    max-width: 100%;
+    max-width: 80% !important;
   }
   .card {
     max-width: 300px;
@@ -917,7 +941,6 @@ img {
     width: 100%;
   }
   .form {
-    margin: 0 auto;
     max-width: 100%;
   }
   label input {
@@ -925,6 +948,9 @@ img {
   }
   .hero__right {
     justify-content: center;
+  }
+  .card {
+    width: 300px;
   }
   .card-img-top {
     max-width: 300px;
