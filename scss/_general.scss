@@ -21,30 +21,31 @@
     --clr--card--text-color: #fff;
 }
 
-::-webkit-scrollbar {
-    width: 20px;
-}
+// ::-webkit-scrollbar {
+//     width: 20px;
+// }
 
-::-webkit-scrollbar-track {
-    background: #10eccf;
-}
+// ::-webkit-scrollbar-track {
+//     background: #68a2d481;
+// }
 
-::-webkit-scrollbar-thumb {
-    width: 20px;
-    height: 20px;
-    // border-radius: 50%;
-    // background: #2ac9d4;
-    border-radius: 50%;
-    background: linear-gradient(145deg,  #cacaca,#f0f0f0),;
-    box-shadow: 5px 5px 9px #606060,
-        -5px -5px 9px #ffffff;
-}
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(145deg, #cacaca, #f0f0f0);
-}
+// ::-webkit-scrollbar-thumb {
+//     width: 20px;
+//     height: 20px;
+//     // border-radius: 50%;
+//     // background: #2ac9d4;
+//     border-radius: 50%;
+//     background: linear-gradient(145deg,  #cacaca,#f0f0f0),;
+//     box-shadow: 5px 5px 9px #606060,
+//         -5px -5px 9px #ffffff;
+// }
+// ::-webkit-scrollbar-thumb:hover {
+//     background: linear-gradient(145deg, #cacaca, #f0f0f0);
+// }
 
 * {
     box-sizing: border-box;
+    // transition: all 5s ease;
 }
 
 html {

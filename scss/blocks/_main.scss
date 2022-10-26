@@ -88,6 +88,22 @@
     color: var(--clr--card--text-color);
 }
 
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.read{
+    margin: 0;
+    padding: 2px 12px;
+}
+.saved {
+    background: var(--clr--body--bg-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
 // lodaerrr spinner
 .lds-ring {
     display: flex;
@@ -124,6 +140,89 @@
     animation-delay: -0.15s;
 }
 
+// ! modal description ======= style
+.modal-description {
+    position: fixed;
+    z-index: 444;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    // display: flex;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr--body--bg-color);
+    // opacity: .9;
+    animation: fade 0.3s ease-in-out;
+}
+@keyframes fade {
+    0%{
+        transform: scale(.1);
+        opacity: 0.1;
+    }
+    25%{
+        transform: scale(.4);
+        opacity: 0.5;
+    }
+    50%{
+        transform: scale(.8);
+        opacity: 0.7;
+    }
+    75%{
+        transform: scale(1);
+        opacity: 0.9;
+    }
+    100%{
+        transform: scale(1.1);
+        opacity: 1;
+    }
+}
+.modal-content {
+    padding: 80px 20px 20px 20px;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // align-items: flex-start;
+    opacity: 1;
+}
+
+.modal-head {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    margin: 0;
+    display: flex;
+    justify-content: end;
+}
+.star-rate{
+    cursor: pointer;
+}
+.mod-img {
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.modal-desc {
+    width: 250px;
+    // overflow-y: scroll;
+    // height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px
+}
+.star_color{
+    width: 200px;
+}
+// .star_color > path:hover{
+//     fill: red;
+// }
 @keyframes lds-ring {
     0% {
         transform: rotate(0deg);

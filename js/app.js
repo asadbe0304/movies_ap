@@ -21,7 +21,7 @@ $(".drop").addEventListener("click", () => {
     console.log(elArrow);
 })
 
-movies.splice(100);
+movies.splice(10);
 
 // ============= NORMLIZE MOVIES ==========////
 
@@ -58,7 +58,7 @@ allMovies.forEach((e) => {
     // console.log(category);
 
     // category.push(e.category)
-    console.log(year);
+    // console.log(year);
     const clone = $('template').content.cloneNode(true);
     clone.querySelector('img').src = e.smallImg;
     clone.querySelector('.card-title').textContent = e.title;
@@ -68,6 +68,7 @@ allMovies.forEach((e) => {
     clone.querySelector('.cate').textContent = 'Category: ' + e.category
     clone.querySelector('.time').textContent = e.time
     clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
+    clone.querySelector('.read').innerHTML = `<a data-id="${e.id}"  class="btn btn-dark read" target=_blank>Read</a>`
     $('.hero__right').appendChild(clone)
 })
 
@@ -161,6 +162,7 @@ function renderSearchResult(data = []) {
         clone.querySelector('.cate').textContent = 'Category: ' + e.category
         clone.querySelector('.time').textContent = e.time
         clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
+        clone.querySelector('.read').innerHTML = `<a data-id="${e.id}"  class="btn btn-dark read" target=_blank>Read</a>`
         $('.hero__right').appendChild(clone)
     })
 
@@ -199,6 +201,14 @@ function myFunction() {
     }
 }
 
+//  modal decsription
+$('.read').addEventListener('click', (e)=>{
+    console.log($('.read'));
+    $('.modal-description').classList.add('d-flex');
+})
+$('.btn-primary').addEventListener('click' , (e)=>{
+    $('.modal-description').classList.remove('d-flex');
+})
 // ============= NORMLIZE MOVIES END ==========////
 // EXTRA PLUGINS//
 
