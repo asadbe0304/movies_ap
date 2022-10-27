@@ -679,21 +679,41 @@ img {
     box-shadow: 0 0 0 0 #926363;
     transform: rotate(0);
   }
-  25% {
+  15% {
     box-shadow: 0 0 2px 2px #926363;
     transform: rotate(0) scale(1);
   }
-  50% {
+  30% {
     box-shadow: 0 0px 4px 4px #926363;
     transform: scale(1.05);
   }
-  75% {
+  40% {
     box-shadow: 0 0px 6px 6px #926363;
     transform: scale(1.1);
   }
-  100% {
+  50% {
     box-shadow: 0 0px 8px 10px #926363;
     transform: scale(1.2);
+  }
+  60% {
+    box-shadow: 0 0 8px 10px #926363;
+    transform: scale(1.2);
+  }
+  70% {
+    box-shadow: 0 0 6px 6px #926363;
+    transform: rotate(0) scale(1.15);
+  }
+  80% {
+    box-shadow: 0 0px 4px 4px #926363;
+    transform: scale(1.1);
+  }
+  90% {
+    box-shadow: 0 0px 2px 2px #926363;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0px 0px 0px #926363;
+    transform: scale(1);
   }
 }
 @keyframes logo {
@@ -701,21 +721,41 @@ img {
     box-shadow: 0 0 0 0 #926363;
     transform: rotate(0);
   }
-  25% {
+  15% {
     box-shadow: 0 0 2px 2px #926363;
     transform: rotate(0) scale(1);
   }
-  50% {
+  30% {
     box-shadow: 0 0px 4px 4px #926363;
     transform: scale(1.05);
   }
-  75% {
+  40% {
     box-shadow: 0 0px 6px 6px #926363;
     transform: scale(1.1);
   }
-  100% {
+  50% {
     box-shadow: 0 0px 8px 10px #926363;
     transform: scale(1.2);
+  }
+  60% {
+    box-shadow: 0 0 8px 10px #926363;
+    transform: scale(1.2);
+  }
+  70% {
+    box-shadow: 0 0 6px 6px #926363;
+    transform: rotate(0) scale(1.15);
+  }
+  80% {
+    box-shadow: 0 0px 4px 4px #926363;
+    transform: scale(1.1);
+  }
+  90% {
+    box-shadow: 0 0px 2px 2px #926363;
+    transform: scale(1.05);
+  }
+  100% {
+    box-shadow: 0 0px 0px 0px #926363;
+    transform: scale(1);
   }
 }
 .hero {
@@ -800,21 +840,12 @@ img {
 }
 
 .card-footer {
+  margin: 0px 0 0px 0;
+  padding: 10px 0 10px 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-}
-
-.read {
-  margin: 0;
-  padding: 2px 12px;
-}
-
-.saved {
-  background: var(--clr--body--bg-color);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  gap: 10px;
 }
 
 .lds-ring {

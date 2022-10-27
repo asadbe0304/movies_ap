@@ -40,37 +40,38 @@ const allMovies = movies.map((e) => {
         largeImg: e.bigThumbnail,
     };
 });
+
 let year = [];
 let rate = [];
 
 
-// console.log(allMovies);
+function renderMovies() {
 
+    allMovies.forEach((e) => {
+        if (!year.includes(e.year)) {
+            year.push(e.year);
+        }
+        if (!rate.includes(e.rating)) {
+            rate.push(e.rating);
+        }
+        const clone = $('template').content.cloneNode(true);
+        clone.querySelector('img').src = e.smallImg;
+        clone.querySelector('.card-title').textContent = e.title;
+        clone.querySelector('.card-text').textContent = "Description: " + e.summary
+        clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
+        clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
+        clone.querySelector('.cate').textContent = 'Category: ' + e.category
+        clone.querySelector('.time').textContent = e.time
+        // clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
+        clone.querySelector('.card-footer').innerHTML = `
+        <a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>
+        <a data-id="${e.id}"  class="btn btn-dark text-white fw-bold read" target=_blank>Read</a>`
+        $('.hero__right').appendChild(clone)
+    })
 
-allMovies.forEach((e) => {
-    if (!year.includes(e.year)) {
-        year.push(e.year);
-    }
-    if (!rate.includes(e.rating)) {
-        rate.push(e.rating);
-    }
+}
 
-    // console.log(category);
-
-    // category.push(e.category)
-    // console.log(year);
-    const clone = $('template').content.cloneNode(true);
-    clone.querySelector('img').src = e.smallImg;
-    clone.querySelector('.card-title').textContent = e.title;
-    clone.querySelector('.card-text').textContent = "Description: " + e.summary
-    clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
-    clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
-    clone.querySelector('.cate').textContent = 'Category: ' + e.category
-    clone.querySelector('.time').textContent = e.time
-    clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
-    clone.querySelector('.read').innerHTML = `<a data-id="${e.id}"  class="btn btn-dark read" target=_blank>Read</a>`
-    $('.hero__right').appendChild(clone)
-})
+renderMovies();
 
 year.sort()
 year.forEach((e) => {
@@ -123,13 +124,13 @@ $('.btn-search').addEventListener('click', () => {
     <div></div>
     <div></div>
 </div>`
+
     const searchVal = $('#film-name').value.toLowerCase().trim();
     const rating = $('.rate').value;
     const catg = $('.category').value;
     const searchText = new RegExp(searchVal, 'gi');
     const searchresult = findFilm(searchText, rating, catg);
     console.log(searchresult);
-    // console.log(searchVal);
 
     setTimeout(() => {
         $('.hero__right').innerHTML = ""
@@ -140,6 +141,7 @@ $('.btn-search').addEventListener('click', () => {
 })
 //  find film end//
 
+
 function renderSearchResult(data = []) {
     data.forEach((e) => {
         if (!year.includes(e.year)) {
@@ -148,11 +150,6 @@ function renderSearchResult(data = []) {
         if (!rate.includes(e.rating)) {
             rate.push(e.rating);
         }
-
-        // console.log(category);
-
-        // category.push(e.category)
-        console.log(year);
         const clone = $('template').content.cloneNode(true);
         clone.querySelector('img').src = e.smallImg;
         clone.querySelector('.card-title').textContent = e.title;
@@ -161,8 +158,9 @@ function renderSearchResult(data = []) {
         clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
         clone.querySelector('.cate').textContent = 'Category: ' + e.category
         clone.querySelector('.time').textContent = e.time
-        clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
-        clone.querySelector('.read').innerHTML = `<a data-id="${e.id}"  class="btn btn-dark read" target=_blank>Read</a>`
+        clone.querySelector('.card-footer').innerHTML = `
+        <a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>
+        <a data-id="${e.id}"  class="btn btn-dark text-white fw-bold read" target=_blank>Read</a>`
         $('.hero__right').appendChild(clone)
     })
 
@@ -173,14 +171,10 @@ function renderSearchResult(data = []) {
 /// dark mode rejimi============
 const elDarkBtn = $('.dark__img');
 const elBody = $('body');
-// console.log(elBody);
-// console.log(elDarkBtn);
 
 elDarkBtn.addEventListener('click', (e) => {
     elBody.classList.toggle('dark')
     elDarkBtn.classList.toggle('img_root')
-    // elDarkBtn.setAttribute.add( 'style','transform:rotateX(180deg')
-    // elDarkBtn.setAttribute.remove( 'style','transform:rotateX(180deg')
 })
 //  ! dark mode end 
 
@@ -189,7 +183,7 @@ window.onscroll = function () {
     myFunction()
 };
 
-let  header = $(".header");
+let header = $(".header");
 
 let sticky = header.offsetTop;
 
@@ -202,11 +196,11 @@ function myFunction() {
 }
 
 //  modal decsription
-$('.read').addEventListener('click', (e)=>{
+$('.read').addEventListener('click', (e) => {
     console.log($('.read'));
     $('.modal-description').classList.add('d-flex');
 })
-$('.btn-primary').addEventListener('click' , (e)=>{
+$('.btn-primary').addEventListener('click', (e) => {
     $('.modal-description').classList.remove('d-flex');
 })
 // ============= NORMLIZE MOVIES END ==========////

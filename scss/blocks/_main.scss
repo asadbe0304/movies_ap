@@ -89,21 +89,13 @@
 }
 
 .card-footer {
+    margin: 0px 0 0px 0 ;
+    padding: 10px 0 10px 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
+    gap: 10px;
 }
-.read{
-    margin: 0;
-    padding: 2px 12px;
-}
-.saved {
-    background: var(--clr--body--bg-color);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
 // lodaerrr spinner
 .lds-ring {
     display: flex;
