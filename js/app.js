@@ -196,18 +196,15 @@ function myFunction() {
 }
 
 //  modal decsription
-$('.read').addEventListener('click', (e) => {
-    console.log($('.read'));
-    $('.modal-description').classList.add('d-flex');
-})
-$('.btn-primary').addEventListener('click', (e) => {
-    $('.modal-description').classList.remove('d-flex');
-})
-// ============= NORMLIZE MOVIES END ==========////
-// EXTRA PLUGINS//
+$$('.read').forEach((event) => {
+    event.addEventListener('click', (evt) => {
 
-// (function () {
-//     const date = new Date();
-//     const time = `${date.getFullYear()}`;
-//     $("#copy").innerHTML = time;
-// })();
+        $('.modal-description').classList.add('d-flex');
+
+        $('.btn-primary').addEventListener('click', (e) => {
+
+            $('.modal-description').classList.remove('d-flex');
+
+        })
+    })
+})
