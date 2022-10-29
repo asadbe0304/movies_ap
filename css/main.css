@@ -452,7 +452,6 @@ img {
   margin: 0;
   padding: 0;
   background: var(--clr--header--bg-color);
-  border-radius: 10px;
   box-shadow: inset -5px -5px 10px #0e1014, inset 5px 5px 10px #364250;
 }
 
@@ -478,7 +477,6 @@ img {
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   border: 1px solid var(--clr--header--bg-color);
-  border-radius: 10px;
   box-shadow: inset -5px -5px 10px var(--clr--header--shadow-color), inset 5px 5px 10px #364250;
 }
 

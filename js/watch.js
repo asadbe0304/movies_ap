@@ -1,3 +1,20 @@
+"use strict";
+
+const elModal = document.querySelector(".modal-mobile");
+
+const elList = document.querySelector('.list__inner')
+
+$('.btn').addEventListener('click', () => {
+    $('.modal-mobile').classList.add("swipe")
+    // $('.line2').style.display="none"
+})
+$('.mobile').addEventListener('click', () => {
+    $('.modal-mobile').classList.remove("swipe")
+})
+
+
+// ! swipeer slide js code ========
+
 var swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     spaceBetween: 30,
