@@ -63,7 +63,7 @@ function renderMovies() {
         clone.querySelector('.cate').textContent = 'Category: ' + e.category
         clone.querySelector('.time').textContent = e.time
         // clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
-        clone.querySelector('.card-footer').innerHTML = `
+        clone.querySelector('.card__inner').innerHTML = `
         <a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>
         <a data-id="${e.id}"  class="btn btn-dark text-white fw-bold read" target=_blank>Read</a>`
         $('.hero__right').appendChild(clone)
@@ -207,4 +207,10 @@ $$('.read').forEach((event) => {
 
         })
     })
+})
+
+//  modal description end 
+
+$('.hero__bookmark').addEventListener('click', (e)=>{
+    $('.hero__bookmark').classList.toggle('bookmark-show')
 })
