@@ -54,11 +54,12 @@
     color: #000;
 }
 
-.date{
+.date {
     // color: var(--clr--card--text-color);
     color: #000;
 }
-.rate{
+
+.rate {
     // color: var(--clr--card--text-color);
     color: #000;
 }
@@ -166,63 +167,16 @@
     // opacity: .9;
     animation: fade 0.3s ease-in-out;
 }
+
 @media screen and(max-width:1160px) {
-    .modal-content{
+    .modal-content {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
     }
 }
-@keyframes fade {
-    0% {
-        transform: scale(0);
-        opacity: 0.1;
-    }
-    10% {
-        transform: scale(0.15);
-        opacity: 0.1;
-    }
 
-    20% {
-        transform: scale(.25);
-        opacity: 0.2;
-    }
-    30% {
-        transform: scale(.35);
-        opacity: 0.3;
-    }
-    40% {
-        transform: scale(.45);
-        opacity: 0.4;
-    }
-    50% {
-        transform: scale(.55);
-        opacity: 0.5;
-    }
-    60% {
-        transform: scale(.75);
-        opacity: 0.7;
-    }
-    70% {
-        transform: scale(.8);
-        opacity: 0.8;
-    }
-    80% {
-        transform: scale(.9);
-        opacity: 0.9;
-    }
-
-    
-    90% {
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1.05);
-    }
-}
 
 .modal-content {
     padding: 80px 20px 20px 20px;
@@ -267,30 +221,39 @@
 .star_color {
     width: 200px;
 }
+
 // bookmark style 
-.hero__bookmark{
+.hero__bookmark {
     position: fixed;
     right: -280px;
     top: 94px;
     z-index: 55;
     width: 350px;
     height: 42px;
-    background:#fff;
+    background: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 10px 0px 10px 10px;
     cursor: pointer;
 }
 
-.open__saved{
+.saved__header {
+    display: flex;
+    width: 100%;
+}
+
+.open__saved {
     margin: 5px 20px;
 }
-.hero__bookmark:active{
+
+.hero__bookmark:active {
     color: #dedede;
     opacity: .9;
 }
-.bookmark-show{
+
+.bookmark-show {
     border-radius: 10px 10px 0px 0px;
     height: 100vh;
     overflow-y: scroll;
@@ -298,32 +261,119 @@
     animation: show 0.2s ease-in-out;
 }
 
-@keyframes show {
-    0%{
-        height: 100px;
-        right: -280px;
-    }
-    25%{
-        height: 250px;
-        right: -210px;
-    }
-    50%{
-        height: 350px;
-        right: -140px;
-    }
-    75%{
-        height: 500px;
-        right: -70px;
-    }
-    100%{
-        height: 100vh;
-        right: -0px;
-    }
+.card__saved {
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    display: none;
 }
+
+.card__saved--show {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #5a5959;
+    opacity: 1;
+}
+.not__found{
+    margin: 30px 0 0 0;
+    font-weight: 600;
+    color: #000;
+    font-size: 20px;
+}
+
 // bookmark style end
 // .star_color > path:hover{
 //     fill: red;
 // }
+
+@keyframes fade {
+    0% {
+        transform: scale(0);
+        opacity: 0.1;
+    }
+
+    10% {
+        transform: scale(0.15);
+        opacity: 0.1;
+    }
+
+    20% {
+        transform: scale(.25);
+        opacity: 0.2;
+    }
+
+    30% {
+        transform: scale(.35);
+        opacity: 0.3;
+    }
+
+    40% {
+        transform: scale(.45);
+        opacity: 0.4;
+    }
+
+    50% {
+        transform: scale(.55);
+        opacity: 0.5;
+    }
+
+    60% {
+        transform: scale(.75);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(.8);
+        opacity: 0.8;
+    }
+
+    80% {
+        transform: scale(.9);
+        opacity: 0.9;
+    }
+
+
+    90% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes show {
+    0% {
+        height: 100px;
+        right: -280px;
+    }
+
+    25% {
+        height: 250px;
+        right: -210px;
+    }
+
+    50% {
+        height: 350px;
+        right: -140px;
+    }
+
+    75% {
+        height: 500px;
+        right: -70px;
+    }
+
+    100% {
+        height: 100vh;
+        right: -0px;
+    }
+}
+
 @keyframes lds-ring {
     0% {
         transform: rotate(0deg);

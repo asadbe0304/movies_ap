@@ -211,6 +211,8 @@ $$('.read').forEach((event) => {
 
 //  modal description end 
 
+// saved bookmark film 
 $('.hero__bookmark').addEventListener('click', (e)=>{
     $('.hero__bookmark').classList.toggle('bookmark-show')
+    $('.card__saved').classList.toggle("card__saved--show")
 })
