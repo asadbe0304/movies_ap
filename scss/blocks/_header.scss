@@ -137,6 +137,32 @@
     background: #000;
 }
 
+.language {
+    position: relative;
+    margin: 0;
+    padding: 2px 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background: #154eeb;
+    // gap: 5px;
+}
+
+.lang__text {
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #154eeb;
+}
+.active{
+    background: #030e27;
+}
 //! modal style =======
 .modal-mobile {
     position: fixed;
@@ -149,10 +175,8 @@
     min-height: 100vh;
     list-style: none;
     background: #000;
-    // display: none;
     transform: translateY(-100%);
     transition: all .5s ease-in;
-    // opacity: 0.8;
 }
 
 .mobile {

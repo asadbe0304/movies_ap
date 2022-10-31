@@ -21,28 +21,6 @@
     --clr--card--text-color: #fff;
 }
 
-// ::-webkit-scrollbar {
-//     width: 20px;
-// }
-
-// ::-webkit-scrollbar-track {
-//     background: #68a2d481;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//     width: 20px;
-//     height: 20px;
-//     // border-radius: 50%;
-//     // background: #2ac9d4;
-//     border-radius: 50%;
-//     background: linear-gradient(145deg,  #cacaca,#f0f0f0),;
-//     box-shadow: 5px 5px 9px #606060,
-//         -5px -5px 9px #ffffff;
-// }
-// ::-webkit-scrollbar-thumb:hover {
-//     background: linear-gradient(145deg, #cacaca, #f0f0f0);
-// }
-
 * {
     box-sizing: border-box;
     // transition: all 5s ease;
@@ -57,7 +35,11 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background: var(--clr--body--bg-color);
+    // background: var(--clr--body--bg-color);
+    background-image: url(../images/569323-1bpEHf1510684912.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 ul li {

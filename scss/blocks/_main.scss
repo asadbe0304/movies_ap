@@ -17,7 +17,7 @@
     // background: var(--clr--card-bg-color);
     border-radius: 10px;
     backdrop-filter: blur(20px);
-    opacity: 0.8;
+    // opacity: 0.8;
     background: #dedede;
     box-shadow: inset -10px -10px 20px #595959,
         inset 10px 10px 20px #ffffff;
@@ -241,16 +241,13 @@
 
 .saved__header {
     display: flex;
+    justify-content: space-around;
+    align-items:center;
     width: 100%;
 }
 
 .open__saved {
-    margin: 5px 20px;
-}
-
-.hero__bookmark:active {
-    color: #dedede;
-    opacity: .9;
+    margin: 5px 0px;
 }
 
 .bookmark-show {

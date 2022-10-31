@@ -7,22 +7,25 @@ const elList = document.querySelector('.list__inner')
 
 const elArrow = document.querySelector('.arrow')
 
-$('.btn').addEventListener('click', () => {
-    $('.modal-mobile').classList.add("swipe")
-    // $('.line2').style.display="none"
-})
-$('.mobile').addEventListener('click', () => {
-    $('.modal-mobile').classList.remove("swipe")
-})
+function mobileMenu() {
+    $('.btn').addEventListener('click', () => {
+        $('.modal-mobile').classList.add("swipe")
+        // $('.line2').style.display="none"
+    })
+    $('.mobile').addEventListener('click', () => {
+        $('.modal-mobile').classList.remove("swipe")
+    })
 
-$(".drop").addEventListener("click", () => {
-    elList.classList.toggle('d-block');
-    elArrow.classList.toggle('rotate')
-    console.log(elArrow);
-})
+    $(".drop").addEventListener("click", () => {
+        elList.classList.toggle('d-block');
+        elArrow.classList.toggle('rotate')
+        console.log(elArrow);
+    })
+}
 
-movies.splice(10);
+mobileMenu();
 
+movies.splice(20);
 // ============= NORMLIZE MOVIES ==========////
 
 const allMovies = movies.map((e) => {
@@ -42,8 +45,8 @@ const allMovies = movies.map((e) => {
 });
 
 let year = [];
-let rate = [];
 
+let rate = [];
 
 function renderMovies() {
 
@@ -54,6 +57,8 @@ function renderMovies() {
         if (!rate.includes(e.rating)) {
             rate.push(e.rating);
         }
+
+        
         const clone = $('template').content.cloneNode(true);
         clone.querySelector('img').src = e.smallImg;
         clone.querySelector('.card-title').textContent = e.title;
@@ -62,13 +67,13 @@ function renderMovies() {
         clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
         clone.querySelector('.cate').textContent = 'Category: ' + e.category
         clone.querySelector('.time').textContent = e.time
-        // clone.querySelector('.blink').innerHTML = `<a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>`
         clone.querySelector('.card__inner').innerHTML = `
-        <a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>
-        <a data-id="${e.id}"  class="btn btn-dark text-white fw-bold read" target=_blank>Read</a>`
+        <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
+        <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>`
+        // clone.qdataset.dbid.e.id
         $('.hero__right').appendChild(clone)
     })
-
+    
 }
 
 renderMovies();
@@ -150,6 +155,7 @@ function renderSearchResult(data = []) {
         if (!rate.includes(e.rating)) {
             rate.push(e.rating);
         }
+
         const clone = $('template').content.cloneNode(true);
         clone.querySelector('img').src = e.smallImg;
         clone.querySelector('.card-title').textContent = e.title;
@@ -159,16 +165,15 @@ function renderSearchResult(data = []) {
         clone.querySelector('.cate').textContent = 'Category: ' + e.category
         clone.querySelector('.time').textContent = e.time
         clone.querySelector('.card-footer').innerHTML = `
-        <a href="${e.yotube}"  class="btn blink bg-danger text-dark fw-bold" target=_blank>Youtube Watch</a>
-        <a data-id="${e.id}"  class="btn btn-dark text-white fw-bold read" target=_blank>Read</a>`
+        <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
+        <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>
+        <img class="saved-mark" src="./images/bookmark.png" width="32" height="32" alt="">`;
         $('.hero__right').appendChild(clone)
     })
 
 }
 
-
-
-/// dark mode rejimi============
+//! dark mode start============
 const elDarkBtn = $('.dark__img');
 const elBody = $('body');
 
@@ -194,25 +199,51 @@ function myFunction() {
         header.classList.remove("sticky");
     }
 }
-
+// !window onscroll header fixed end=========
 //  modal decsription
-$$('.read').forEach((event) => {
-    event.addEventListener('click', (evt) => {
 
-        $('.modal-description').classList.add('d-flex');
+function modalDesc() {
 
-        $('.btn-primary').addEventListener('click', (e) => {
+    $$('.read').forEach((event) => {
+        event.addEventListener('click', (evt) => {
 
-            $('.modal-description').classList.remove('d-flex');
+            $('.modal-description').classList.add('d-flex');
 
+            $('.btn-primary').addEventListener('click', (e) => {
+
+                $('.modal-description').classList.remove('d-flex');
+            })
         })
+        // renderMovies();
     })
-})
-
+}
+modalDesc();
 //  modal description end 
-
 // saved bookmark film 
-$('.hero__bookmark').addEventListener('click', (e)=>{
-    $('.hero__bookmark').classList.toggle('bookmark-show')
-    $('.card__saved').classList.toggle("card__saved--show")
-})
+function savedFilm() {
+    $('.hero__bookmark').addEventListener('click', (e) => {
+        $('.hero__bookmark').classList.toggle('bookmark-show')
+        $('.card__saved').classList.toggle("card__saved--show")
+    })
+}
+savedFilm();
+
+// ! bookmark saved result function  start============================================
+
+let saved = [];
+
+function bookmark() {
+    $$('.saved-mark').forEach((e) => {
+        e.addEventListener('click', (e) => {
+            const title = createElement(
+                'div', 'film__saved fw-bold shadow', `
+                    <ul>
+                    <li>${allMovies.title}</li>
+                    <li>${allMovies.summary}</li>
+                    </ul>`
+            )
+        })
+        $('.card__saved').appendChild(title)
+    })
+}
+bookmark();
