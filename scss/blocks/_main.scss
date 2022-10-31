@@ -283,7 +283,14 @@
     color: #000;
     font-size: 20px;
 }
-
+.bookmark{
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.bookmark:active{
+    cursor: pointer;
+    transform: scale(0.9);
+}
 // bookmark style end
 // .star_color > path:hover{
 //     fill: red;

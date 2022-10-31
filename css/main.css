@@ -1107,6 +1107,16 @@ img {
   font-size: 20px;
 }
 
+.bookmark {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookmark:active {
+  cursor: pointer;
+  transform: scale(0.9);
+}
+
 @-webkit-keyframes fade {
   0% {
     transform: scale(0);
