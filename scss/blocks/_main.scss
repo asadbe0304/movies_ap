@@ -226,14 +226,21 @@
     justify-content: flex-start;
     align-items: flex-start;
     border-radius: 10px 0px 10px 10px;
+    // cursor: pointer;
+}
+.trash{
     cursor: pointer;
 }
-
+.trash:active{
+    transform: scale(0.9);
+}
 .saved__header {
+    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    cursor: pointer;
 }
 
 .open__saved {
@@ -291,10 +298,20 @@
     cursor: pointer;
     transform: scale(0.9);
 }
-// bookmark style end
-// .star_color > path:hover{
-//     fill: red;
-// }
+.count-film{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 255;
+    width: 25px;
+    height: 25px;
+    background: #c52c2c;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    align-items:center;
+    border-radius: 50%;
+}
 
 @keyframes fade {
     0% {

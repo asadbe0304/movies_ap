@@ -132,6 +132,7 @@ const findFilm = (str, rat, ctg) => {
 
 
 $('.btn-search').addEventListener('click', () => {
+    // const search = localStorage.setItem('search', e.target.value);
     $('.hero__right').innerHTML = ` <div class="lds-ring">
     <div></div>
     <div></div>
@@ -202,7 +203,6 @@ elDarkBtn.addEventListener('click', (e) => {
     elDarkBtn.classList.toggle('img_root')
 })
 //  ! dark mode end 
-
 // ! window scrool header fixed ===============
 window.onscroll = function () {
     myFunction()
@@ -220,22 +220,19 @@ function myFunction() {
     }
 }
 // !window onscroll header fixed end=========
-//  modal decsription
-$('.modal-description').classList.add('d-flex');
+// ! modal decsription claos =============
 
 $('.btn-primary').addEventListener('click', (e) => {
 
     $('.modal-description').classList.add('d-none');
 })
 
-// })
 function modalDesc(id) {
     $('.modal-film').innerHTML = "";
     const filmItem = allMovies.filter((e) => {
         return e.id === id;
     })
     const data = filmItem[0]
-    // console.log(data)
     const modal = createElement('div', 'film-content', ` <div class="modal-desc">
     <img class="mod-img" src="${data.smallImg}" width="250" height="250"
     alt="Modal read film img">
@@ -251,24 +248,19 @@ function modalDesc(id) {
     `)
     $('.modal-film').appendChild(modal)
 }
-//  modal description end 
-// saved bookmark film 
+//!  modal description end  ===
+//! saved bookmark film start
 
 $('.hero__bookmark').addEventListener('click', (e) => {
     $('.hero__bookmark').classList.toggle('bookmark-show')
     $('.card__saved').classList.toggle("card__saved--show")
 })
-// $('.close-saved').addEventListener('click', (e) => {
-//     $('.close-saved').classList.remove('bookmark-show')
-//     $('.card__saved').classList.remove("card__saved--show")
-// })
 
 // ! bookmark saved result function  start============================================
 
 const bookmarks = [];
 
 function addBookmark(id) {
-
     $(".card__saved").innerHTML = "";
 
     const elfilm = allMovies.filter(element => {
@@ -290,23 +282,24 @@ function addBookmark(id) {
             ${e.title}
             </h3>
             <a href="${e.yotube}" class="text-white bg-danger p-2 border-0 rounded-2 mx-2" target="_blank">Watch</a>
+            <img class="trash" src="./images/trash-can.png" width="32" height="32" alt="">
             </div>
         `)
             $(".card__saved").appendChild(item);
             console.log(bookmarks);
+            $('.count-film').innerHTML = bookmarks.length
         })
     }
 }
 
 window.addEventListener("click", (e) => {
-
     if (e.target.classList.contains("read")) {
         $(".modal-description").classList.remove("d-none");
         modalDesc(e.target.getAttribute("data-id"));
     }
-    // // ---------------BOOKMARK -------------------
-
+    // // --------------BOOKMARK -------------------
     if (e.target.classList.contains('bookmark')) {
         addBookmark(e.target.getAttribute("data-bookmark"))
     }
+
 });

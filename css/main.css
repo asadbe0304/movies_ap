@@ -367,6 +367,14 @@ template {
   --clr--card--text-color: #fff;
 }
 
+::-moz-selection {
+  background: transparent;
+}
+
+::selection {
+  background: transparent;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -1049,14 +1057,23 @@ img {
   justify-content: flex-start;
   align-items: flex-start;
   border-radius: 10px 0px 10px 10px;
+}
+
+.trash {
   cursor: pointer;
 }
 
+.trash:active {
+  transform: scale(0.9);
+}
+
 .saved__header {
+  position: relative;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+  cursor: pointer;
 }
 
 .open__saved {
@@ -1115,6 +1132,21 @@ img {
 .bookmark:active {
   cursor: pointer;
   transform: scale(0.9);
+}
+
+.count-film {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 255;
+  width: 25px;
+  height: 25px;
+  background: #c52c2c;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+  border-radius: 50%;
 }
 
 @-webkit-keyframes fade {

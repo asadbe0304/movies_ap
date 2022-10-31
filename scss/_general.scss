@@ -20,7 +20,9 @@
     --clr--card--btn-color: #8f8f8f;
     --clr--card--text-color: #fff;
 }
-
+::selection{
+    background: transparent;
+}
 * {
     box-sizing: border-box;
     // transition: all 5s ease;
