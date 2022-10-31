@@ -575,6 +575,7 @@ img {
   align-items: center;
   border-radius: 20px;
   background: #154eeb;
+  border: 2px solid #000;
 }
 
 .lang__text {
@@ -978,7 +979,6 @@ img {
   margin: 0 auto;
   width: 100%;
   min-height: 100vh;
-  display: none;
   justify-content: center;
   align-items: center;
   background-color: var(--clr--body--bg-color);
@@ -1077,17 +1077,27 @@ img {
   margin: 0;
   opacity: 0;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cards-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .card__saved--show {
-  padding: 0;
+  padding: 10px;
   margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   border-top: 1px solid #5a5959;
   opacity: 1;
+  gap: 10px;
 }
 
 .not__found {

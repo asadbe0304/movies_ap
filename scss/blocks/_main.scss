@@ -42,7 +42,6 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    // color: var(--clr--card--text-color);
     color: #000;
 }
 
@@ -50,22 +49,18 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    // color: var(--clr--card--text-color);
     color: #000;
 }
 
 .date {
-    // color: var(--clr--card--text-color);
     color: #000;
 }
 
 .rate {
-    // color: var(--clr--card--text-color);
     color: #000;
 }
 
 .hero__form {
-    // margin: 0 auto;
     width: 350px;
     display: flex;
     flex-direction: column;
@@ -159,12 +154,9 @@
     margin: 0 auto;
     width: 100%;
     min-height: 100vh;
-    // display: flex;
-    display: none;
     justify-content: center;
     align-items: center;
     background-color: var(--clr--body--bg-color);
-    // opacity: .9;
     animation: fade 0.3s ease-in-out;
 }
 
@@ -210,8 +202,6 @@
 
 .modal-desc {
     width: 250px;
-    // overflow-y: scroll;
-    // height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -242,7 +232,7 @@
 .saved__header {
     display: flex;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     width: 100%;
 }
 
@@ -262,20 +252,32 @@
     padding: 0;
     margin: 0;
     opacity: 0;
+    // display: flex;
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cards-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .card__saved--show {
-    padding: 0;
+    padding: 10px;
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     border-top: 1px solid #5a5959;
     opacity: 1;
+    gap: 10px;    
 }
-.not__found{
+
+.not__found {
     margin: 30px 0 0 0;
     font-weight: 600;
     color: #000;

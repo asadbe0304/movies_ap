@@ -1,10 +1,7 @@
 "use strict";
 
-
 const elModal = document.querySelector(".modal-mobile");
-
 const elList = document.querySelector('.list__inner')
-
 const elArrow = document.querySelector('.arrow')
 
 function mobileMenu() {
@@ -57,23 +54,35 @@ function renderMovies() {
         if (!rate.includes(e.rating)) {
             rate.push(e.rating);
         }
-
-        
-        const clone = $('template').content.cloneNode(true);
-        clone.querySelector('img').src = e.smallImg;
-        clone.querySelector('.card-title').textContent = e.title;
-        clone.querySelector('.card-text').textContent = "Description: " + e.summary
-        clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
-        clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
-        clone.querySelector('.cate').textContent = 'Category: ' + e.category
-        clone.querySelector('.time').textContent = e.time
-        clone.querySelector('.card__inner').innerHTML = `
-        <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
-        <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>`
-        // clone.qdataset.dbid.e.id
+        const clone = createElement('div', 'cards', `
+        <div class="card border-0">
+        <img src="${e.smallImg}" class="card-img-top" alt="...">
+        <span class="d-block fw-bold text-danger time p-3">${e.time}</span>
+        <div class="card-body">
+        <h5 class="card-title fw-bold">${e.title}</h5>
+            <p class="card-text">${e.summary}</p>
+            <p class="cate fw-bold">${e.year}</p>
+            <p class="date fw-bold">${e.rating}</p>
+            <div class="star__rating rate d-flex py-2 gap-1">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                </div>
+                <div class="card-footer">
+                <div class="card__inner">
+                <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
+                <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>
+                </div>
+                <img class="saved-mark bookmark" data-bookmark=${e.id} src="./images/bookmark.png" width="32" height="32" alt="">
+                </div>
+                </div>
+                </div>`)
+        clone.dataset.moieId = e.id;
         $('.hero__right').appendChild(clone)
     })
-    
+
 }
 
 renderMovies();
@@ -156,23 +165,34 @@ function renderSearchResult(data = []) {
             rate.push(e.rating);
         }
 
-        const clone = $('template').content.cloneNode(true);
-        clone.querySelector('img').src = e.smallImg;
-        clone.querySelector('.card-title').textContent = e.title;
-        clone.querySelector('.card-text').textContent = "Description: " + e.summary
-        clone.querySelector('.date').textContent = 'Date: ' + e.year + ' - year'
-        clone.querySelector('.rate').textContent = 'Rating Imdb: ' + e.rating
-        clone.querySelector('.cate').textContent = 'Category: ' + e.category
-        clone.querySelector('.time').textContent = e.time
-        clone.querySelector('.card-footer').innerHTML = `
-        <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
-        <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>
-        <img class="saved-mark" src="./images/bookmark.png" width="32" height="32" alt="">`;
+        const clone = createElement('div', 'cards', `
+        <div class="card border-0">
+        <img src="${e.smallImg}" class="card-img-top" alt="...">
+        <span class="d-block fw-bold text-danger time p-3">${e.time}</span>
+        <div class="card-body">
+            <h5 class="card-title fw-bold">${e.title}</h5>
+            <p class="card-text">${e.summary}</p>
+            <p class="cate fw-bold">${e.year}</p>
+            <p class="date fw-bold">${e.rating}</p>
+            <div class="star__rating rate d-flex py-2 gap-1">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+                <img class="star" src="./images/ic.png" alt="">
+            </div>
+            <div class="card-footer">
+                <div class="card__inner">
+                <a href="${e.yotube}"  class="btn blink bg-danger text-dark" target=_blank>Youtube Watch</a>
+                <a data-id="${e.id}"  class="btn btn-dark text-white read" target=_blank>Read</a>
+                </div>
+                <img class="saved-mark bookmark" data-bookmark=${e.id} src="./images/bookmark.png" width="32" height="32" alt="">
+            </div>
+        </div>
+    </div>`)
         $('.hero__right').appendChild(clone)
     })
-
 }
-
 //! dark mode start============
 const elDarkBtn = $('.dark__img');
 const elBody = $('body');
@@ -201,49 +221,92 @@ function myFunction() {
 }
 // !window onscroll header fixed end=========
 //  modal decsription
+$('.modal-description').classList.add('d-flex');
 
-function modalDesc() {
+$('.btn-primary').addEventListener('click', (e) => {
 
-    $$('.read').forEach((event) => {
-        event.addEventListener('click', (evt) => {
+    $('.modal-description').classList.add('d-none');
+})
 
-            $('.modal-description').classList.add('d-flex');
-
-            $('.btn-primary').addEventListener('click', (e) => {
-
-                $('.modal-description').classList.remove('d-flex');
-            })
-        })
-        // renderMovies();
+// })
+function modalDesc(id) {
+    $('.modal-film').innerHTML = "";
+    const filmItem = allMovies.filter((e) => {
+        return e.id === id;
     })
+    const data = filmItem[0]
+    // console.log(data)
+    const modal = createElement('div', 'film-content', ` <div class="modal-desc">
+    <img class="mod-img" src="${data.smallImg}" width="250" height="250"
+    alt="Modal read film img">
+        <div class="card-captions">
+            <h3 class="card__heading">
+            ${data.title}
+            </h3>
+        <p class="modal-text">
+        ${data.summary}
+        </p>
+        </div>
+    </div>
+    `)
+    $('.modal-film').appendChild(modal)
 }
-modalDesc();
 //  modal description end 
 // saved bookmark film 
-function savedFilm() {
-    $('.hero__bookmark').addEventListener('click', (e) => {
-        $('.hero__bookmark').classList.toggle('bookmark-show')
-        $('.card__saved').classList.toggle("card__saved--show")
-    })
-}
-savedFilm();
+
+$('.hero__bookmark').addEventListener('click', (e) => {
+    $('.hero__bookmark').classList.toggle('bookmark-show')
+    $('.card__saved').classList.toggle("card__saved--show")
+})
+// $('.close-saved').addEventListener('click', (e) => {
+//     $('.close-saved').classList.remove('bookmark-show')
+//     $('.card__saved').classList.remove("card__saved--show")
+// })
 
 // ! bookmark saved result function  start============================================
 
-let saved = [];
+const bookmarks = [];
 
-function bookmark() {
-    $$('.saved-mark').forEach((e) => {
-        e.addEventListener('click', (e) => {
-            const title = createElement(
-                'div', 'film__saved fw-bold shadow', `
-                    <ul>
-                    <li>${allMovies.title}</li>
-                    <li>${allMovies.summary}</li>
-                    </ul>`
-            )
-        })
-        $('.card__saved').appendChild(title)
+function addBookmark(id) {
+
+    $(".card__saved").innerHTML = "";
+
+    const elfilm = allMovies.filter(element => {
+        return element.id === id
     })
+    if (!bookmarks.includes(elfilm[0])) {
+        bookmarks.push(elfilm[0])
+    } else {
+        alert('Added to again')
+    }
+
+    if (bookmarks.length > 0) {
+
+        bookmarks.forEach((e) => {
+            const item = createElement('div', 'cards-info', `
+            <img class="saved-img" src="${e.smallImg}" width="100" height="100"> 
+            <div class="card-cap">
+            <h3 class="card__caption">
+            ${e.title}
+            </h3>
+            <a href="${e.yotube}" class="text-white bg-danger p-2 border-0 rounded-2 mx-2" target="_blank">Watch</a>
+            </div>
+        `)
+            $(".card__saved").appendChild(item);
+            console.log(bookmarks);
+        })
+    }
 }
-bookmark();
+
+window.addEventListener("click", (e) => {
+
+    if (e.target.classList.contains("read")) {
+        $(".modal-description").classList.remove("d-none");
+        modalDesc(e.target.getAttribute("data-id"));
+    }
+    // // ---------------BOOKMARK -------------------
+
+    if (e.target.classList.contains('bookmark')) {
+        addBookmark(e.target.getAttribute("data-bookmark"))
+    }
+});
