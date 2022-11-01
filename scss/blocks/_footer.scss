@@ -1,7 +1,8 @@
 .site-footer {
     margin: 40px 0 0 0;
     padding: 0;
-    background: var(--clr--header--bg-color);
+    background: #5433FF;
+    background: linear-gradient(to right, var(--clr--header-bg-1), var(--clr--header-bg-2), var(--clr--header-bg-3));
 }
 
 .footer {

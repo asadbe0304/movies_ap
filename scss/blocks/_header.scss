@@ -16,15 +16,16 @@
 
 .img_root {
     transform: rotate(-180deg);
-    // transform: translateY(100deg);
 }
 
 .site-header {
     margin: 0;
     padding: 0;
-    background: var(--clr--header--bg-color);
     box-shadow: inset -5px -5px 10px #0e1014,
         inset 5px 5px 10px #364250;
+    background: #5433FF;
+    background: linear-gradient(to right, var(--clr--header-bg-1), var(--clr--header-bg-2), var(--clr--header-bg-3));
+
 }
 
 .header {
@@ -46,9 +47,8 @@
     width: 100%;
     left: 0;
     z-index: 55;
-    opacity: 0.9;
+    opacity: 1;
     background: var(--clr--stick--bg-color);
-    // box-shadow: 0 4px 30px var(--clr--header--shadow-color);
     backdrop-filter: blur(20px);
     border: 1px solid var(--clr--header--bg-color);
     box-shadow: inset -5px -5px 10px var(--clr--header--shadow-color),
@@ -78,11 +78,9 @@
 .logo__youtube {
     margin: 0 4px 3px;
     padding: 0;
-    // box-shadow: 0px 2px 8px 8px #555;
     border-radius: 50%;
     border: none;
     animation: logo 1s infinite;
-    // transition: animation 1s ease-in-out;
 }
 
 .header__list {
@@ -146,7 +144,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
-    background: #154eeb;
+    background: #4c5570;
     border: 2px solid #000;
     cursor: pointer;
 }
@@ -162,20 +160,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background: #154eeb;
 }
 
 .active {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    // width: 30px;
-    // height: 30px;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // border-radius: 50%;
-    background: #030e27;
+    background: #1bf32d;
 }
 
 //! modal style =======
@@ -368,25 +356,31 @@
 }
 
 @keyframes stick {
-    0%{
-        height:0;
+    0% {
+        height: 0;
     }
-    15%{
-        height:10px;
+
+    15% {
+        height: 10px;
     }
-    30%{
-        height:20px;
+
+    30% {
+        height: 20px;
     }
-    50%{
-        height:30px;
+
+    50% {
+        height: 30px;
     }
-    70%{
-        height:40px;
+
+    70% {
+        height: 40px;
     }
-    85%{
-        height:50px;
+
+    85% {
+        height: 50px;
     }
-    100%{
-        height:60px;
+
+    100% {
+        height: 60px;
     }
 }
