@@ -237,10 +237,10 @@ function modalDesc(id) {
     <img class="mod-img" src="${data.smallImg}" width="250" height="250"
     alt="Modal read film img">
         <div class="card-captions">
-            <h3 class="card__heading">
+            <h1 class="fw-bold">
             ${data.title}
-            </h3>
-        <p class="modal-text">
+            </h1>
+        <p>
         ${data.summary}
         </p>
         </div>
@@ -301,5 +301,76 @@ window.addEventListener("click", (e) => {
     if (e.target.classList.contains('bookmark')) {
         addBookmark(e.target.getAttribute("data-bookmark"))
     }
-
 });
+
+// !multi language===========
+
+// function multiLanguage() {
+//     const lang = {
+//         uz: {
+//             home: "Bosh sahifa",
+//             film: "Biz haqimizda",
+//             watch: "Ko'rmoq",
+//             category: "Katetgoriyalar",
+//             trailer: "Trailer"
+//         },
+//         eng: {
+//             home: "Bosh sahifa",
+//             film: "Biz haqimizda",
+//             watch: "Ko'rmoq",
+//             category: "Katetgoriyalar",
+//             trailer: "Trailer"
+//         }
+//     }
+
+//     localStorage.setItem('language', JSON.stringify(lang));
+// }
+
+// multiLanguage()
+
+
+// $('#lang').addEventListener('click', (e) => {
+//     // const langs = JSON.parse(localStorage.getItem('language'))
+//     // localStorage.setItem('selectedLanguage', e.target.value);
+//     // selectLang(langs[e.target.value])
+//     // langText.classList.toggle('active')
+// })
+// const langText = $$('.lang__text');
+// langText.forEach((e) => {
+//     e.addEventListener('click', (e) => {
+//     //     if (langText.classList.includes('active') === true) {
+//     //         langText.classList.Remove('active')
+//     //     } else {
+//         //     }
+//     })
+//     langText.classList.add('active')
+// })
+
+// function selectLang(selectedLanguage) {
+//     // console.log(selectedLanguage);
+
+//     const navItem = $$('.list__item--link');
+
+//     let lang = []
+
+//     for (let key in selectedLanguage) {
+//         lang.push(selectedLanguage[key])
+//     }
+
+//     navItem.forEach((e, i) => {
+//         e.textContent = lang[i]
+//     })
+
+// }
+
+// (
+//     function () {
+//         let select = localStorage.getItem('selectedLanguage')
+//         let langs = JSON.parse(localStorage.getItem('language'))
+//         console.log(select);
+//         console.log(langs);
+//         const selected = langs[select];
+
+//         selectLang(selected)
+//     }()
+// )
