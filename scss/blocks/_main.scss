@@ -248,16 +248,15 @@
 .bookmark-show {
     border-radius: 10px 10px 0px 0px;
     height: 100vh;
-    overflow-y: scroll;
     right: 0;
     animation: show 0.2s ease-in-out;
+    overflow-y: scroll;
 }
 
 .card__saved {
     padding: 0;
     margin: 0;
     opacity: 0;
-    // display: flex;
     display: none;
     flex-direction: column;
     justify-content: space-between;

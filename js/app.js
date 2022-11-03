@@ -251,9 +251,13 @@ function modalDesc(id) {
 //!  modal description end  ===
 //! saved bookmark film start
 
-$('.hero__bookmark').addEventListener('click', (e) => {
-    $('.hero__bookmark').classList.toggle('bookmark-show')
-    $('.card__saved').classList.toggle("card__saved--show")
+$('.open__saved').addEventListener('click', (e) => {
+    $('.hero__bookmark').classList.add('bookmark-show')
+    $('.card__saved').classList.add("card__saved--show")
+})
+$('#close-saved').addEventListener('click', (e) => {
+    $('.hero__bookmark').classList.remove('bookmark-show')
+    $('.card__saved').classList.remove("card__saved--show")
 })
 
 // ! bookmark saved result function  start============================================
@@ -330,36 +334,32 @@ window.addEventListener("click", (e) => {
 
 
 // $('#lang').addEventListener('click', (e) => {
-//     // const langs = JSON.parse(localStorage.getItem('language'))
-//     // localStorage.setItem('selectedLanguage', e.target.value);
-//     // selectLang(langs[e.target.value])
-//     // langText.classList.toggle('active')
+//     const langs = JSON.parse(localStorage.getItem('language'))
+//     localStorage.setItem("selectedLanguage", e.target.value);
+//     selectLang(langs[e.target.value])
 // })
-// const langText = $$('.lang__text');
-// langText.forEach((e) => {
-//     e.addEventListener('click', (e) => {
-//     //     if (langText.classList.includes('active') === true) {
-//     //         langText.classList.Remove('active')
-//     //     } else {
-//         //     }
-//     })
-//     langText.classList.add('active')
-// })
+// // const langText = $$('#lang');
+// // langText.forEach((e) => {
+// //     e.addEventListener('click', (e) => {
+// //     })
+// // })
 
 // function selectLang(selectedLanguage) {
-//     // console.log(selectedLanguage);
+//     console.log(selectedLanguage);
 
-//     const navItem = $$('.list__item--link');
+//     const navItem = $$('.list__item--link   ');
 
-//     let lang = []
+//     let array = []
 
 //     for (let key in selectedLanguage) {
-//         lang.push(selectedLanguage[key])
+//         array.push(selectedLanguage[key])
+//         console.log(array);
 //     }
-
-//     navItem.forEach((e, i) => {
-//         e.textContent = lang[i]
+//     navItem.forEach((e, i,a) => {
+//         e.textContent = array[i]
+//         // console.log(e);
 //     })
+//     console.log(array);
 
 // }
 
