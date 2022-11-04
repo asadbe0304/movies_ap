@@ -1,9 +1,9 @@
 "use strict";
 window.addEventListener('load', (e) => {
+    $('.dots-wrapper').style.display = "flex";
     setTimeout((e) => {
         $('.dots-wrapper').style.display = "none";
     }, 4000)
-    $('.dots-wrapper').style.display = "flex";
 
     const elModal = document.querySelector(".modal-mobile");
     const elList = document.querySelector('.list__inner')
