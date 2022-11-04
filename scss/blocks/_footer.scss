@@ -1,6 +1,8 @@
 .site-footer {
     margin: 40px 0 0 0;
     padding: 0;
+    box-shadow: inset -5px -5px 10px #0e1014,
+        inset 5px 5px 10px #364250;
     background: #5433FF;
     background: linear-gradient(to right, var(--clr--header-bg-1), var(--clr--header-bg-2), var(--clr--header-bg-3));
 }
@@ -45,8 +47,9 @@
     border-radius: 5px;
     background: #090b0e;
     box-shadow: 0px 4px 3px -1px #fff;
-    color: #fff ;
+    color: #fff;
 }
+
 .footer__list--item .footer__item--link:active {
     transform: translateY(0px);
     background: #222932;

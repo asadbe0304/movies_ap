@@ -94,7 +94,7 @@
 
 .header__list--item .list__item--link {
     margin: 0;
-    padding: 30px 30px;
+    padding: 20px 20px;
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -196,8 +196,8 @@
 
 .arrow {
     position: absolute;
-    top: 35px;
-    right: 5px;
+    top: 25px;
+    right: 0px;
     transition: all .2s ease-in;
 }
 
@@ -209,7 +209,8 @@
 .list__inner {
     margin: 0;
     padding: 0;
-    top: 90px;
+    top: 68px;
+    right: 0;
     z-index: 555;
     list-style: 0;
     background: #000;
@@ -241,12 +242,6 @@
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
-
-// @media screen and(max-width:1320px) {
-//     .header__list--item .list__item--link{
-//         width: 25%;
-//     }
-// }
 @media screen and (max-width:1295px) {
     .site-header {
         width: 100%;
@@ -286,7 +281,7 @@
     }
 
     .header {
-        padding: 20px 5px;
+        padding: 10px 5px;
     }
 
     .hamburger {
@@ -294,7 +289,7 @@
     }
 
     .header__list--item .list__item--link {
-        padding: 30px 16px 30px 35px;
+        padding: 20px 16px 20px 35px;
         line-height: 32px;
         font-size: 20px;
     }

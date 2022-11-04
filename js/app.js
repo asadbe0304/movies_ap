@@ -1,4 +1,10 @@
 "use strict";
+window.addEventListener('load', (e) => {
+    setTimeout((e)=>{
+        $('.dots-wrapper').style.display ="none";
+    },4000)
+    $('.dots-wrapper').style.display ="flex";
+})
 
 const elModal = document.querySelector(".modal-mobile");
 const elList = document.querySelector('.list__inner')
@@ -60,9 +66,9 @@ function renderMovies() {
         <span class="d-block fw-bold text-danger time p-3">${e.time}</span>
         <div class="card-body">
         <h5 class="card-title fw-bold">${e.title}</h5>
-            <p class="card-text">${e.summary}</p>
-            <p class="cate fw-bold">${e.year}</p>
-            <p class="date fw-bold">${e.rating}</p>
+            <p class="card-text">Description: ${e.summary}</p>
+            <p class="cate fw-bold">Year: ${e.year}</p>
+            <p class="date fw-bold">Rate: ${e.rating}</p>
             <div class="star__rating rate d-flex py-2 gap-1">
                 <img class="star" src="./images/ic.png" alt="">
                 <img class="star" src="./images/ic.png" alt="">
@@ -172,9 +178,9 @@ function renderSearchResult(data = []) {
         <span class="d-block fw-bold text-danger time p-3">${e.time}</span>
         <div class="card-body">
             <h5 class="card-title fw-bold">${e.title}</h5>
-            <p class="card-text">${e.summary}</p>
-            <p class="cate fw-bold">${e.year}</p>
-            <p class="date fw-bold">${e.rating}</p>
+            <p class="card-text">Description: ${e.summary}</p>
+            <p class="cate fw-bold">Year: ${e.year}</p>
+            <p class="date fw-bold">Rate: ${e.rating}</p>
             <div class="star__rating rate d-flex py-2 gap-1">
                 <img class="star" src="./images/ic.png" alt="">
                 <img class="star" src="./images/ic.png" alt="">
@@ -201,6 +207,7 @@ const elBody = $('body');
 elDarkBtn.addEventListener('click', (e) => {
     elBody.classList.toggle('dark')
     elDarkBtn.classList.toggle('img_root')
+
 })
 //  ! dark mode end 
 // ! window scrool header fixed ===============

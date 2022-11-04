@@ -210,7 +210,7 @@
 .hero__bookmark {
     position: fixed;
     right: -280px;
-    top: 94px;
+    top: 69px;
     z-index: 55;
     width: 350px;
     height: 42px;
@@ -238,11 +238,20 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .open__saved {
     margin: 5px 0px;
+    cursor: pointer;
+}
+
+.open__saved:active {
+    transform: scale(.9);
+}
+
+#close-saved {
+    cursor: pointer;
 }
 
 .bookmark-show {
@@ -264,6 +273,9 @@
 }
 
 .cards-info {
+    padding: 5px;
+    background: #e5e5e5;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -414,10 +426,6 @@
         justify-content: space-around;
     }
 
-    .form {
-        width: 350px;
-    }
-
     .card {
         width: 350px;
     }
@@ -429,15 +437,15 @@
 
 @media screen and (max-width:1150px) {
     .form {
-        max-width: 350px;
+        // max-width: 350px;
     }
 
     .card {
-        max-width: 350px;
+        max-width: 400px;
     }
 
     .card-img-top {
-        max-width: 350px;
+        max-width: 400px;
     }
 }
 
@@ -453,6 +461,10 @@
 
     .form {
         max-width: 80% !important;
+    }
+
+    .result {
+        max-width: 350px !important;
     }
 
     .card {
