@@ -1116,6 +1116,10 @@ img {
           animation: fade 0.3s ease-in-out;
 }
 
+.modal-content {
+  overflow-y: scroll;
+}
+
 @media screen and (max-width: 1160px) {
   .modal-content {
     display: flex;
@@ -1232,6 +1236,7 @@ img {
 
 .cards-info {
   padding: 5px;
+  width: 100%;
   background: #e5e5e5;
   border-radius: 5px;
   display: flex;

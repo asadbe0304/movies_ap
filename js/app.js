@@ -137,7 +137,7 @@ window.addEventListener('load', (e) => {
 
 
     $('.btn-search').addEventListener('click', () => {
-        // const search = localStorage.setItem('search', e.target.value);
+        e.preventDefault()
         $('.hero__right').innerHTML = ` <div class="lds-ring">
     <div></div>
     <div></div>
@@ -160,7 +160,6 @@ window.addEventListener('load', (e) => {
 
     })
     //  find film end//
-
 
     function renderSearchResult(data = []) {
         data.forEach((e) => {
@@ -196,7 +195,7 @@ window.addEventListener('load', (e) => {
                 </div>
                 </div>
                 </div>`)
-            $('.hero__right').appendChild(clone)
+            $('.hero__right').appendChild(clone);
         })
     }
     //! dark mode start============
@@ -204,8 +203,8 @@ window.addEventListener('load', (e) => {
     const elBody = $('body');
 
     elDarkBtn.addEventListener('click', (e) => {
-        elBody.classList.toggle('dark')
-        elDarkBtn.classList.toggle('img_root')
+        elBody.classList.toggle('dark');
+        elDarkBtn.classList.toggle('img_root');
 
     })
     //  ! dark mode end 
@@ -256,17 +255,19 @@ window.addEventListener('load', (e) => {
     }
     //!  modal description end  ===
     //! saved bookmark film start
-
+function trash(){
     $('.open__saved').addEventListener('click', (e) => {
         $('.hero__bookmark').classList.add('bookmark-show')
         $('.card__saved').classList.add("card__saved--show")
-    })
+    });
     $('#close-saved').addEventListener('click', (e) => {
         $('.hero__bookmark').classList.remove('bookmark-show')
         $('.card__saved').classList.remove("card__saved--show")
-    })
+    });
+}
+trash();
 
-    // ! bookmark saved result function  start============================================
+// ! bookmark saved result function  start============================================
 
     const bookmarks = [];
 
@@ -286,22 +287,22 @@ window.addEventListener('load', (e) => {
 
             bookmarks.forEach((e) => {
                 const item = createElement('div', 'cards-info', `
-            <img class="saved-img" src="${e.smallImg}" width="100" height="100"> 
-            <div class="card-cap">
-            <h3 class="card__caption">
-            ${e.title}
-            </h3>
-            <a href="${e.yotube}" class="text-white bg-danger p-2 border-0 rounded-2 mx-2" target="_blank">Watch</a>
-            <img class="trash" src="./images/trash-can.png" width="32" height="32" alt="">
-            </div>
-            `)
+                <img class="saved-img" src="${e.smallImg}" width="100" height="100"> 
+                <div class="card-cap">
+                <h3 class="card__caption">
+                ${e.title}
+                </h3>
+                <a href="${e.yotube}" class="text-white bg-danger p-2 border-0 rounded-2 mx-2" target="_blank">Watch</a>
+                <img class="trash" id="trash" src="./images/trash-can.png" width="32" height="32" alt="">
+                </div>
+                `)
                 $(".card__saved").appendChild(item);
                 console.log(bookmarks);
                 $('.count-film').innerHTML = bookmarks.length
             })
         }
     }
-
+    
     window.addEventListener("click", (e) => {
         if (e.target.classList.contains("read")) {
             $(".modal-description").classList.remove("d-none");
@@ -312,8 +313,13 @@ window.addEventListener('load', (e) => {
             addBookmark(e.target.getAttribute("data-bookmark"))
         }
     });
-
+    
 })
+
+    // const delSaved = $(".card-info")
+    // $('.trash').addEventListener('click',(e)=>{
+    //     $('.card-saved').removeChild(delSaved)
+    // })
 // !multi language===========
 
 // function multiLanguage() {
